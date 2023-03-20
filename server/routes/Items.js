@@ -38,8 +38,9 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req,res) => { 
   try{
-    const oneItem = await Item.destroy(req.params.id)
-    req.status(200).json(oneItem)
+    const id = req.params.id
+    const oneItem = await Item.destroy({ where: { id } })
+    res.status(200).send("Item has been removed.")
   } catch (error) {
     console.error("Cannot delete item" + error)
     res.status(500).send(error)
