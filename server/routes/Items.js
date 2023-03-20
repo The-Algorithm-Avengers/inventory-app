@@ -12,4 +12,20 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// GET /items/:title
+router.get("/:title", async (req, res) => {
+
+  try {
+    const item = await Item.findOne({
+      where: {title: req.params.title}
+    })
+    res.status(200).json(item)
+
+  } catch (error) {
+    console.error("There is a problem with getting a single item" + error)
+    res.status(500).send(error)
+  }
+
+})
+
 module.exports = router;
