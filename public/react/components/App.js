@@ -27,6 +27,7 @@ export const App = () => {
 		<main>	
       <h1>Sauce Store</h1>
 			<h2>All things 🔥</h2>
+			<h2>Roman</h2>
 			<SaucesList sauces={sauces} />
 		</main>
 	)
