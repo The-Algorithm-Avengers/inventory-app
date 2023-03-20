@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "morgan": "1.10.0",
     "nodemon": "^2.0.19",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@testing-library/react": "^12.0.0",
     "babel-jest": "^27.1.0",
-    "jest": "^27.1.0"
+    "jest": "^27.1.0",
+    "process": "^0.11.10"
   }
 }
