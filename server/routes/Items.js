@@ -6,46 +6,44 @@ const { Item } = require("../models/index");
 router.get("/", async (req, res, next) => {
 	try {
 		const items = await Item.findAll();
-		res.send(items);
-    console.log('hi')
+		res.status(200).json(items);
 	} catch (error) {
-    console.log('heloo')
 		next(error);
 	}
 });
 
-// GET /items/:title
-router.get("/:id", async (req, res) => {
+// GET /items/:id
+router.get("/:id", async (req, res, next) => {
 	try {
-    const item = await Item.findByPk(req.params.id)
+		const item = await Item.findByPk(req.params.id);
 		res.status(200).json(item);
 	} catch (error) {
 		console.error("There is a problem with getting a single item" + error);
-		res.status(500).send(error);
+		next(error);
 	}
 });
-
-router.post("/", async (req, res) => {
+// POST /items
+router.post("/", async (req, res, next) => {
 	try {
-    const singleItem = await Item.create(req.body)
+		const singleItem = await Item.create(req.body);
 		res.status(200).json(singleItem);
 	} catch (error) {
 		console.error("Problem with creating an item" + error);
-		res.status(500).send(error);
+		next(error);
 	}
 });
 
-
-router.delete("/:id", async (req,res) => { 
-  try{
-    const id = req.params.id
-    const oneItem = await Item.destroy({ where: { id } })
-    res.status(200).send("Item has been removed.")
-  } catch (error) {
-    console.error("Cannot delete item" + error)
-    res.status(500).send(error)
-  }
-})
+// DELETE /items/:id
+router.delete("/:id", async (req, res, next) => {
+	try {
+		const id = req.params.id;
+		await Item.destroy({ where: { id } });
+		res.status(200).send("Item has been removed.");
+	} catch (error) {
+		console.error("Cannot delete item" + error);
+		next(error);
+	}
+});
 
 
 // PUT - UPDATE the Item is present
