@@ -23,14 +23,16 @@ export const App = () => {
   useEffect(() => {
     fetchItems();
   }, []);
-
+console.log("hello")
   return (
     <>
       <main>
         <Header />
         <ItemsList items={items} />
+    
       </main>
       <Footer />
+  
     </>
   );
 };
