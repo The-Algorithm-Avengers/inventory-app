@@ -1,0 +1,33 @@
+Hey Algorithm Avengers! Popping in to give some initial feedback on the codebase!
+
+Readability
+------------------------------------------------------------------------------------------
+[yes] New code is syntactic - everything clearly named (files, objects, functions, variables)
+[see below] Clear, concise comments that describes why code was included rather than what it does
+[see below] No redundant comments
+
+"Take a look at the routes - it looks like there are some stray console logs in there that should be removed!"
+"Make sure that if you are creating a variable, that variable is actually getting used!"
+
+Security
+------------------------------------------------------------------------------------------
+[n/a] All secret information is stored securely (environmental variables, github secrets)
+[n/a] User information protected appropriately (encryption, auth)
+
+Stability
+------------------------------------------------------------------------------------------
+[yes] Errors are handled where necessary (try/catch blocks, console errors, status codes)
+[no testing yet] Appropriate test coverage and reporting (unit, end-to-end, accessibility)
+
+"Nice work on using try/catches. Looking forward to those unit tests!"
+
+Architecture
+------------------------------------------------------------------------------------------
+[yes] Code uses encapsulation and modularization to achieve separation of concerns
+[yes] File tree is organized and navigable
+
+"Off to a great start here!"
+
+Reusability
+------------------------------------------------------------------------------------------
+[yes] Code uses reusable components, functions, and services
