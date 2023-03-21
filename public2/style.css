@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(223, 223, 223);
+}
+
+.footerStyles {
+  font-size: 30px;
+  height: 200px;
+  background-color: aquamarine;
+}
