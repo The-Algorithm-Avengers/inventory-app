@@ -2,13 +2,17 @@ const request = require('supertest');
 const app = require('../server/app'); // import your app/server file here
 
 describe('Test API endpoints', () => {
+
+  // Get All route
   test('GET /api/items should return status 200 and the length should be greater than 0', async () => {
     const res = await request(app).get('/api/items');
     expect(res.statusCode).toEqual(200);
     expect(res.body.length).toBeGreaterThan(0)
   });
+
+  // Get single Item 
     test('GET /api/items/:id should return status 200 and a single item', async () => {
-    const res = await request(app).get('/api/items/2');
+    const res = await request(app).get('/api/items/3');
     expect(res.statusCode).toEqual(200);
     const array = Object.keys(res.body)
     expect(array.includes('title')).toBe(true)
@@ -18,7 +22,8 @@ describe('Test API endpoints', () => {
     expect(array.includes('image')).toBe(true)
   });
 
-  test('POST /api/test should return status 200 and message "Test message"', async () => {
+  // Create a single item
+  test('POST /api/test should return status 200 and return true for properties in expected.', async () => {
     const res = await request(app)
       .post('/api/items')
       .send({
@@ -36,5 +41,9 @@ describe('Test API endpoints', () => {
     expect(res.body.image).toEqual('blah');
   });
 
-  // Add more test cases for other endpoints as needed
+  // Delete a single item
+  test('POST /api/test should return status 200 and returns message "Item has been removed."', async () => {
+    const res = await request(app).delete('/api/items/2')
+    expect(res.text).toBe("Item has been removed.")
+  });
 });
