@@ -11,6 +11,7 @@ const App = () => {
   const [items, setItems] = useState([]);
   const [showDetails, setShowDetails] = useState(false)
   const [targetItem , setTargetItem] = useState({})
+  const [showForm, setShowForm] = useState(false)
 
   async function fetchItems() {
     try {
@@ -68,10 +69,15 @@ const App = () => {
 
           {!showDetails ?
           <>
-            <h1>Items Store</h1>
-            <h2>All things 🔥</h2>
-            <ItemsList items={items} getItem={getItem}/>
-            <CreateForm/>
+            {!showForm ? 
+            <>
+              <h1>Items Store</h1>
+              <h2>All things 🔥</h2>
+              <button onClick={() => setShowForm(!showForm)}>Add Item</button>
+              <ItemsList items={items} getItem={getItem}/>
+            </> :
+            <CreateForm setShowForm={setShowForm} fetchItems={fetchItems}/>
+            } 
           </> :
 
           <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails}/>
