@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import apiURL from '../utils/api';
 
-export function CreateForm() {
+export function CreateForm({setShowForm, fetchItems}) {
   const [formData, setFormData] = useState({
     title: '',
     price: 0,
@@ -28,6 +28,8 @@ export function CreateForm() {
         category: '',
         image: '',
     });
+    setShowForm(!setShowForm)
+    fetchItems()
   };
   
   const handleInputChange = (event) => {
@@ -88,6 +90,7 @@ export function CreateForm() {
           />
         </div>
         <button type="submit">Create Item</button>
+        <button onClick={() => setShowForm(!setShowForm)}>Home Page</button>
       </form>
     </div>
   );
