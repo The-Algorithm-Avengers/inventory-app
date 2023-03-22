@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ItemsList from "./components/ItemsList";
-import apiURL from "./api";
+import apiURL from "./utils/api";
 
 const App = () => {
   const [items, setItems] = useState([]);
