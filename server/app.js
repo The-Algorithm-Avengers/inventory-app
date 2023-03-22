@@ -32,7 +32,6 @@ app.use((error, req, res, next) => {
   res.send({error: error.message, name: error.name, message: error.message, table: error.table});
 });
 
-// Johnny WAS HERE.
 
 module.exports = app;
 
