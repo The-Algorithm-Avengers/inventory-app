@@ -1,14 +1,14 @@
-import React from 'react';
-import { Item } from './Item';
+import React from "react";
+import { Item } from "./Item";
 
-const ItemsList = ({items}) => {
-	return <>
-		{
-			items.map((item, idx) => {
-				return <Item item={item} key={idx} />
-			})
-		}
-	</>
-} 
+const ItemsList = ({ items }) => {
+  return (
+    <div className="grid-container">
+      {items.map((item, idx) => (
+        <Item item={item} key={idx} />
+      ))}
+    </div>
+  );
+};
 
-export default ItemsList
+export default ItemsList;
