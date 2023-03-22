@@ -6,7 +6,14 @@ export const Detail = (props) => {
     <div>
         <div className="flex">
             <img src={props.item.image} alt="" />
-            <p>{props.item.description}</p>
+            <div className="flex-col">
+                
+                <h3>{props.item.title}</h3>
+                <p><span>Price:</span> {props.item.price}</p>
+                <p><span>Category: </span>{props.item.category}</p>
+            
+                <p><span>Summary: </span>{props.item.description}</p>
+            </div>
         </div>
         
         <div className="flex">
