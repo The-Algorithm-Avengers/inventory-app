@@ -2,8 +2,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
-      <h2>InvetoryApp</h2>
+    <div className="homepage">
+      <h1>Inventory App</h1>
+      <h2>Items Store</h2>
     </div>
   );
 };

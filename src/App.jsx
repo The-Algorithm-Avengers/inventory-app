@@ -72,17 +72,18 @@ const App = () => {
     <>
       <div>
         <main>
-          <Header />
-
+          
           {/* If showDetails is false */}
           {!showDetails ?
           <>
             {/* If showDetails is false && showForm is false */}
             {!showForm ? 
+            
             <>
-              <h1>Items Store</h1>
-              <h2>All things 🔥</h2>
-              <button onClick={() => setShowForm(!showForm)}>Add Item</button>
+            <Header />
+            <div className="buttonDiv">
+              <button className="itemButton" onClick={() => setShowForm(!showForm)}>ADD ITEM</button>
+              </div>
               <ItemsList items={items} getItem={getItem}/>
             </> :
 

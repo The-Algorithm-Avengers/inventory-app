@@ -1,5 +1,6 @@
 /* ADD STYLES HERE */
 
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -11,4 +12,19 @@
   .grid-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
+
+.homepage{
+  margin:1em;
+}
+.buttonDiv{
+display:flex;
+Justify-content: flex-end;
+margin-right: 1em;
+}
+.itemButton{
+  padding: 10px 20px;
+}
+.itemTitle{
+  text-align: center;
 }
