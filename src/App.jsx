@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ItemsList from "./components/ItemsList";
 import apiURL from "./utils/api";
+import { CreateForm } from "./components/CreateForm";
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -52,6 +53,7 @@ const App = () => {
           <h1>Items Store</h1>
           <h2>All things 🔥</h2>
           <ItemsList items={items} />
+          <CreateForm/>
         </main>
         <Footer />
       </div>
