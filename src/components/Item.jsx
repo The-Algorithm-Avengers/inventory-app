@@ -17,7 +17,8 @@ export const Item = (props) => {
 
   return (
     <div style={itemStyle}>
-      <h3>{props.item.title}</h3>
+      <h3 onClick={() => props.getItem(props.item.id)}>{props.item.title}</h3>
+      
     </div>
   );
 };
