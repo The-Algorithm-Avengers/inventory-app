@@ -14,10 +14,10 @@ router.get("/", async (req, res, next) => {
 	}
 });
 
-// GET /items/:title
+// GET /items/:id
 router.get("/:id", async (req, res) => {
 	try {
-    const item = await Item.findByPk(req.params.id)
+    	const item = await Item.findByPk(req.params.id)
 		res.status(200).json(item);
 	} catch (error) {
 		console.error("There is a problem with getting a single item" + error);
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req,res) => { 
   try{
     const id = req.params.id
-    const oneItem = await Item.destroy({ where: { id } })
+    await Item.destroy({ where: { id } })
     res.status(200).send("Item has been removed.")
   } catch (error) {
     console.error("Cannot delete item" + error)

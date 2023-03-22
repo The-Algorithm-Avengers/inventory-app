@@ -17,7 +17,7 @@ export const Item = (props) => {
 
   return (
     <div style={itemStyle}>
-      <h3>{props.item.name}</h3>
+      <h3>{props.item.title}</h3>
     </div>
   );
 };
