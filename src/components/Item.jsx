@@ -16,9 +16,13 @@ export const Item = (props) => {
   };
 
   return (
+    <div>
     <div style={itemStyle}>
-      <h3 onClick={() => props.getItem(props.item.id)}>{props.item.title}</h3>
-      
+  
+    </div>
+    <h3 className="itemTitle" onClick={() => props.getItem(props.item.id)}>
+    {props.item.title}
+    </h3>
     </div>
   );
 };
