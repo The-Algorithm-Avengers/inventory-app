@@ -5,9 +5,12 @@ import Footer from "./components/Footer";
 import ItemsList from "./components/ItemsList";
 import apiURL from "./utils/api";
 import { CreateForm } from "./components/CreateForm";
+import {Detail} from "./components/Details"
 
 const App = () => {
   const [items, setItems] = useState([]);
+  const [showDetails, setShowDetails] = useState(false)
+  const [targetItem , setTargetItem] = useState({})
 
   async function fetchItems() {
     try {
@@ -33,12 +36,23 @@ const App = () => {
         }
     })
       fetchItems()
+      setShowDetails(false)
 
     } catch (error) {
       console.log("Could not delete item" + error)
     }
     
+  }
 
+  const getItem = async (id) => {
+    try {
+      const res = await fetch(`${apiURL}/items/${id}`)
+      const data = await res.json()
+      setTargetItem(data)
+      setShowDetails(true)
+    } catch (error) {
+      console.log("Couldnt get item" + error)
+    }
   }
 
   useEffect(() => {
@@ -50,11 +64,22 @@ const App = () => {
       <div>
         <main>
           <Header />
-          <h1>Items Store</h1>
-          <h2>All things 🔥</h2>
-          <ItemsList items={items} />
-          <CreateForm/>
+
+          {!showDetails ?
+          <>
+            <h1>Items Store</h1>
+            <h2>All things 🔥</h2>
+            <ItemsList items={items} getItem={getItem}/>
+            <CreateForm/>
+          </> :
+
+          <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails}/>
+        
+        }
+
+          
         </main>
+
         <Footer />
       </div>
     </>
