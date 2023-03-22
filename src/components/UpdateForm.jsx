@@ -15,9 +15,6 @@ export function UpdateForm(props) {
     });
 
     const data = await response.json();
-    
-    setFormData(data);
-    console.log(formData)
     props.setEditForm(false)
     props.setShowDetails(false)
     props.fetchItems()

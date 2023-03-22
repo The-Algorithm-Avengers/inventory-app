@@ -15,6 +15,7 @@ const App = () => {
   const [showForm, setShowForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
 
+  // Gets all Items and sets it to items State
   async function fetchItems() {
     try {
       const response = await fetch(`${apiURL}/items`);
@@ -30,6 +31,8 @@ const App = () => {
     }
   }
 
+
+  // Deletes a single item by ID, reruns fetchItems and by setting showDetails to false stops rendering Details component
   const deleteItem = async (id) => {
     try {
       const res = await fetch(`${apiURL}/items/${id}`, {
@@ -47,6 +50,7 @@ const App = () => {
     
   }
 
+  // Fetches a single item from DB based on ID passed in && set that item to targetItem state && setting showDetails state to true to render Details component.
   const getItem = async (id) => {
     try {
       const res = await fetch(`${apiURL}/items/${id}`)
@@ -59,6 +63,7 @@ const App = () => {
     }
   }
 
+  // On start up run fetchItems ONCE.
   useEffect(() => {
     fetchItems();
   }, []);
@@ -69,8 +74,10 @@ const App = () => {
         <main>
           <Header />
 
+          {/* If showDetails is false */}
           {!showDetails ?
           <>
+            {/* If showDetails is false && showForm is false */}
             {!showForm ? 
             <>
               <h1>Items Store</h1>
@@ -78,13 +85,20 @@ const App = () => {
               <button onClick={() => setShowForm(!showForm)}>Add Item</button>
               <ItemsList items={items} getItem={getItem}/>
             </> :
+
+            // If showDetails is false && showForm is true
             <CreateForm setShowForm={setShowForm} fetchItems={fetchItems}/>
             } 
           </> :
 
           <>
+          {/* If showDetails is true */}
             {!editForm ?
+
+              // if showDetails is true && editForm is false
               <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails} setEditForm={setEditForm}/> :
+              
+              // if showDetails is true && editForm is true
               <UpdateForm item={targetItem} setEditForm={setEditForm} fetchItems={fetchItems} setShowDetails={setShowDetails}/>
 
             }
