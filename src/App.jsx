@@ -52,6 +52,7 @@ const App = () => {
       setShowDetails(true)
     } catch (error) {
       console.log("Couldnt get item" + error)
+      console.log('hi')
     }
   }
 
