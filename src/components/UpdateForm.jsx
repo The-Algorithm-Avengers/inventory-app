@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import apiURL from '../utils/api';
+import React, { useState } from "react";
+import apiURL from "../utils/api";
 
 export function UpdateForm(props) {
   const [formData, setFormData] = useState(props.item);
@@ -7,19 +7,19 @@ export function UpdateForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch(`${apiURL}/items/${props.item.id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     });
 
     const data = await response.json();
-    props.setEditForm(false)
-    props.setShowDetails(false)
-    props.fetchItems()
+    props.setEditForm(false);
+    props.setShowDetails(false);
+    props.fetchItems();
   };
-  
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -29,8 +29,8 @@ export function UpdateForm(props) {
   };
 
   return (
-    < div className='create-form'>
-    <h2>Edit an Item</h2>
+    <div className="create-form">
+      <h2>Edit an Item</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -69,7 +69,9 @@ export function UpdateForm(props) {
           />
         </div>
         <button type="submit">Save Item</button>
-        <button onClick={() => props.setEditForm(false)}>Back to Details</button>
+        <button onClick={() => props.setEditForm(false)}>
+          Back to Details
+        </button>
       </form>
     </div>
   );
