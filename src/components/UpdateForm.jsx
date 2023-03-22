@@ -50,7 +50,7 @@ export function UpdateForm(props) {
             required
           />
         </div>
-        <div className='formContent' style={{ text: "100px"}}>
+        <div className='formContent'>
           <input
             placeholder="Decription"
             type="text"
