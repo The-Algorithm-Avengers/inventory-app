@@ -23,6 +23,23 @@ const App = () => {
     }
   }
 
+  const deleteItem = async (id) => {
+    try {
+      const res = await fetch(`${apiURL}/items/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
+      fetchItems()
+
+    } catch (error) {
+      console.log("Could not delete item" + error)
+    }
+    
+
+  }
+
   useEffect(() => {
     fetchItems();
   }, []);
