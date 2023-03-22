@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer style={{ height: "8vh", backgroundColor: "blue" }}>
-      <h2>this is footer</h2>
+    <footer className="footer">
+      <p><small/>&copy;<span id="copyright"></span> All Rights Reserved ~</p>
     </footer>
   );
 };

@@ -70,52 +70,38 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <main>
-          
-          {/* If showDetails is false */}
-          {!showDetails ?
-          <>
-            {/* If showDetails is false && showForm is false */}
-            {!showForm ? 
-            
+    <Header />
+    <main>
+      {/* If showDetails is false */}
+      {!showDetails ?
+        <>
+          {/* If showDetails is false && showForm is false */}
+          {!showForm ? 
             <>
-            <Header />
-            <div className="buttonDiv">
-              <button className="itemButton" onClick={() => setShowForm(!showForm)}>ADD ITEM</button>
+              <div className="buttonDiv">
+                <button className="itemButton" onClick={() => setShowForm(!showForm)}>ADD ITEM</button>
               </div>
+              <h2 className="header-subtitle">Items Store</h2>
               <ItemsList items={items} getItem={getItem}/>
             </> :
-
             // If showDetails is false && showForm is true
             <CreateForm setShowForm={setShowForm} fetchItems={fetchItems}/>
-            } 
-          </> :
-
-          <>
+          } 
+        </> :
+        <>
           {/* If showDetails is true */}
-            {!editForm ?
+          {!editForm ?
+            // if showDetails is true && editForm is false
+            <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails} setEditForm={setEditForm}/> :
+            // if showDetails is true && editForm is true
+            <UpdateForm item={targetItem} setEditForm={setEditForm} fetchItems={fetchItems} setShowDetails={setShowDetails}/>
+          }
+        </>
+      }
+    </main>
+  <Footer />
+</>
 
-              // if showDetails is true && editForm is false
-              <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails} setEditForm={setEditForm}/> :
-              
-              // if showDetails is true && editForm is true
-              <UpdateForm item={targetItem} setEditForm={setEditForm} fetchItems={fetchItems} setShowDetails={setShowDetails}/>
-
-            }
-          
-          </>
-            
-          
-        
-        }
-
-          
-        </main>
-
-        <Footer />
-      </div>
-    </>
   );
 };
 

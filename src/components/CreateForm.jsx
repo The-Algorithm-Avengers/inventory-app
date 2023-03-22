@@ -44,7 +44,7 @@ export function CreateForm({setShowForm, fetchItems}) {
     < div className='create-form'>
     <h2>Add a New Item</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Title"
             type="text"
@@ -53,7 +53,7 @@ export function CreateForm({setShowForm, fetchItems}) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Price"
             name="price"
@@ -62,7 +62,7 @@ export function CreateForm({setShowForm, fetchItems}) {
             required
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Decription"
             type="text"
@@ -71,7 +71,7 @@ export function CreateForm({setShowForm, fetchItems}) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Category"
             type="text"
@@ -80,7 +80,7 @@ export function CreateForm({setShowForm, fetchItems}) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Image"
             type="text"
@@ -89,8 +89,10 @@ export function CreateForm({setShowForm, fetchItems}) {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Create Item</button>
-        <button onClick={() => setShowForm(!setShowForm)}>Home Page</button>
+        <div className='button'>
+        <button className='itemButton' type="submit">Create Item</button>
+        <button className='itemButton' onClick={() => setShowForm(!setShowForm)}>Home Page</button>
+        </div>
       </form>
     </div>
   );
