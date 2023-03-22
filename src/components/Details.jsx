@@ -18,7 +18,7 @@ export const Detail = (props) => {
         
         <div className="flex">
             <button onClick={() => props.deleteItem(props.item.id)}>Delete</button>
-            <button>Edit</button>
+            <button onClick={() => props.setEditForm(true)}>Edit</button>
             <button onClick={() => props.setShowDetails(false)}>Go Back</button>
         </div>
 

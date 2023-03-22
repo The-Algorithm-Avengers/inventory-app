@@ -6,12 +6,14 @@ import ItemsList from "./components/ItemsList";
 import apiURL from "./utils/api";
 import { CreateForm } from "./components/CreateForm";
 import {Detail} from "./components/Details"
+import { UpdateForm } from "./components/UpdateForm";
 
 const App = () => {
   const [items, setItems] = useState([]);
   const [showDetails, setShowDetails] = useState(false)
   const [targetItem , setTargetItem] = useState({})
   const [showForm, setShowForm] = useState(false)
+  const [editForm, setEditForm] = useState(false)
 
   async function fetchItems() {
     try {
@@ -80,7 +82,16 @@ const App = () => {
             } 
           </> :
 
-          <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails}/>
+          <>
+            {!editForm ?
+              <Detail deleteItem={deleteItem} item={targetItem} setShowDetails={setShowDetails} setEditForm={setEditForm}/> :
+              <UpdateForm item={targetItem} setEditForm={setEditForm} fetchItems={fetchItems} setShowDetails={setShowDetails}/>
+
+            }
+          
+          </>
+            
+          
         
         }
 
