@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Detail = (props) => {
+  
   return (
     <div>
       <div className="flex">
@@ -8,7 +9,7 @@ export const Detail = (props) => {
         <div className="flex-col">
           <h3>{props.item.title}</h3>
           <p>
-            <span>Price:</span> {props.item.price}
+            <span>Price:</span> ${props.item.price}
           </p>
           <p>
             <span>Category: </span>
