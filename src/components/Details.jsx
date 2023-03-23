@@ -22,10 +22,10 @@ export const Detail = (props) => {
         </div>
       </div>
 
-      <div className="flex">
-        <button onClick={() => props.deleteItem(props.item.id)}>Delete</button>
-        <button onClick={() => props.setEditForm(true)}>Edit</button>
-        <button onClick={() => props.setShowDetails(false)}>Go Back</button>
+      <div className="button" style={{ padding: "20px" }}>
+        <button className='itemButton' onClick={() => props.deleteItem(props.item.id)}>Delete</button>
+        <button className='itemButton' onClick={() => props.setEditForm(true)}>Edit</button>
+        <button className='itemButton' onClick={() => props.setShowDetails(false)}>Go Back</button>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ export function UpdateForm(props) {
     <div className="create-form">
       <h2>Edit an Item</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Title"
             type="text"
@@ -41,7 +41,7 @@ export function UpdateForm(props) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Price"
             name="price"
@@ -50,7 +50,7 @@ export function UpdateForm(props) {
             required
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Decription"
             type="text"
@@ -59,7 +59,7 @@ export function UpdateForm(props) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='formContent'>
           <input
             placeholder="Category"
             type="text"
@@ -68,10 +68,10 @@ export function UpdateForm(props) {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Save Item</button>
-        <button onClick={() => props.setEditForm(false)}>
-          Back to Details
-        </button>
+        <div className='button'>
+        <button className='itemButton' type="submit">Save Item</button>
+        <button className='itemButton' onClick={() => props.setEditForm(false)}>Back to Details</button>
+        </div>
       </form>
     </div>
   );

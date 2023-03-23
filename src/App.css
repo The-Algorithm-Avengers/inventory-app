@@ -1,6 +1,15 @@
 /* ADD STYLES HERE */
 
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+
+
+
+/* * {
+  font-family: 'Teko';
+} */
+
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -14,17 +23,80 @@
   }
 }
 
-.homepage{
-  margin:1em;
+.homepage-header{
+  background-color: black;
+  font-family: 'Bebas Neue';
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 15px;
+  color: white;
+  margin: auto;
+  line-height: 1em;
+  display: flex;
+  justify-content: center;
 }
-.buttonDiv{
-display:flex;
-Justify-content: flex-end;
-margin-right: 1em;
+
+.header-subtitle {
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+  margin: 2em;
 }
-.itemButton{
+
+.buttonDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2em;
+}
+
+.button {
+  display: flex;
+}
+
+.itemButton {
   padding: 10px 20px;
+  display: block;
+  font-weight: bold;
+  background-color: white;
 }
+
+
 .itemTitle{
   text-align: center;
 }
+
+.flex {
+  margin: 4em;
+  
+}
+
+.create-form {
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+  margin: 2em;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 60%;
+}
+
+
+input {
+  font-size: 20px;
+}
+
+
+
+
+.footer {
+  background-color: black;
+  color: white;
+  margin: auto;
+  line-height: 1em;
+  display: flex;
+  justify-content: center;
+}
+
