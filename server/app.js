@@ -5,6 +5,7 @@ const app = express();
 const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
+const seed = require("./seed")
 
 //Allow CORS requests
 app.use(cors());
@@ -13,6 +14,7 @@ app.use(morgan("dev"));
 // parsing middleware for form input data & json
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+seed()
 
 // serve up static files (e.g. html and css files)
 app.use(express.static(path.join(__dirname, "../dist")));
