@@ -25,9 +25,10 @@
     "test": "jest",
     "client-dev": "parcel public/index.html",
     "server-dev": "nodemon server.js",
-    "seed": "node seed.js",
+    "seed": "node server/seed.js",
     "start": "react-scripts start",
-    "server": "node server.js"
+    "server": "node server.js",
+    "newstart": "node server.js && react-scripts start"
   },
   "eslintConfig": {
     "extends": [
