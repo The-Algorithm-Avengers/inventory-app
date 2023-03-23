@@ -1,0 +1,37 @@
+Hey Algorithm Avengers! :) Popping in to give some initial feedback on the codebase!
+
+Readability
+------------------------------------------------------------------------------------------
+[Yes] New code is syntactic - everything clearly named (files, objects, functions, variables)
+[Sort of] Clear, concise comments that describes why code was included rather than what it does
+[Yes] No redundant comments
+
+"Remember, if code is too confusing that we need comments to understand it, let's change the code! (See App.js)"
+"Love the use of the .jsx file extension - makes things easier for development for React"
+"Great to see some use of styling inside of components, but maybe we could be more consistent with how we style"
+
+Security
+------------------------------------------------------------------------------------------
+[n/a] All secret information is stored securely (environmental variables, github secrets)
+[n/a] User information protected appropriately (encryption, auth)
+
+Stability
+------------------------------------------------------------------------------------------
+[Yes] Errors are handled where necessary (try/catch blocks, console errors, status codes)
+[Yes] Appropriate test coverage and reporting (unit, end-to-end, accessibility)
+
+Architecture
+------------------------------------------------------------------------------------------
+[Yes] Code uses encapsulation and modularization to achieve separation of concerns
+
+"Components are well modularized and easy to read!"
+"The only confusing component is App.js - could we clean this up a bit?"
+
+[Yes] File tree is organized and navigable
+
+
+Reusability
+------------------------------------------------------------------------------------------
+[Yes] Code uses reusable components, functions, and services
+
+"Clearly a lot of skill behind this team! Well done!"
