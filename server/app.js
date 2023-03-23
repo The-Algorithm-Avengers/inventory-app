@@ -20,6 +20,10 @@ app.use(express.static(path.join(__dirname, "../dist")));
 // api router
 app.use("/api", require("./routes"));
 
+app.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 // 404 handler
 app.use((req, res) => {
 	res
