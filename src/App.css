@@ -1,7 +1,5 @@
 /* ADD STYLES HERE */
-* {
-  box-sizing: border-box;
-}
+
 
 .grid-container {
   display: grid;
@@ -29,93 +27,4 @@ margin-right: 1em;
 }
 .itemTitle{
   text-align: center;
-}
-
-.spinner-container {
- width: 100%;
- height: 100%;
- position: absolute;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
-}
-
-.spinner {
-  width: 200px;
-}
-
-.create-form {
-  height: 100vh;
-  width: 100vw;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.go-back-button {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 100; 
-  background-color: black;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-}
-
-.submit-button {
-  background-color: rgb(251, 43, 2);
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 15px 20px;
-  transition: background-color 0.3s;
-}
-
-.create-form h2 {
-  color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.create-form form {
-  display: grid;
-  gap: 15px;
-}
-
-.create-form input {
-  background-color: #3333332a;
-  border: none;
-  border-radius: 5px;
-  color: black;
-  font-size: 16px;
-  padding: 10px;
-  outline: none;
-  width: 100%;
-}
-
-.create-form input::placeholder {
-  color: #aaaaaa;
-}
-
-.create-form input:focus {
-  border: 2px solid rgb(251, 43, 2);
-  box-shadow: 0 0 5px rgba(0, 179, 255, 0.5);
-}
-
-.form-create {
-  width: 100%;
 }

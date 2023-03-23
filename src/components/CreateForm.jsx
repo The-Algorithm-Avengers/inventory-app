@@ -1,39 +1,37 @@
-import React, { useState } from "react";
-import apiURL from "../utils/api";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import apiURL from '../utils/api';
 
-export function CreateForm({ setShowForm, fetchItems }) {
+export function CreateForm({setShowForm, fetchItems}) {
   const [formData, setFormData] = useState({
-    title: "",
+    title: '',
     price: 0,
-    description: "",
-    category: "",
-    image: "",
+    description: '',
+    category: '',
+    image: '',
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch(`${apiURL}/items/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData)
     });
 
     const data = await response.json();
     setFormData({
-      title: "",
-      price: 0,
-      description: "",
-      category: "",
-      image: "",
+        title: '',
+        price: 0,
+        description: '',
+        category: '',
+        image: '',
     });
-    setShowForm(!setShowForm);
-    fetchItems();
+    setShowForm(!setShowForm)
+    fetchItems()
   };
-
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
@@ -43,9 +41,9 @@ export function CreateForm({ setShowForm, fetchItems }) {
   };
 
   return (
-    <div className="create-form">
-      <h2>Add a New Item</h2>
-      <form className="form-create" onSubmit={handleSubmit}>
+    < div className='create-form'>
+    <h2>Add a New Item</h2>
+      <form onSubmit={handleSubmit}>
         <div>
           <input
             placeholder="Title"
@@ -58,7 +56,6 @@ export function CreateForm({ setShowForm, fetchItems }) {
         <div>
           <input
             placeholder="Price"
-            type="number"
             name="price"
             value={formData.price}
             onChange={handleInputChange}
@@ -85,23 +82,17 @@ export function CreateForm({ setShowForm, fetchItems }) {
         </div>
         <div>
           <input
-            placeholder="Image URL"
+            placeholder="Image"
             type="text"
             name="image"
             value={formData.image}
             onChange={handleInputChange}
           />
         </div>
-        <button className="submit-button" type="submit">
-          Create Item
-        </button>
-        <button
-          className="go-back-button"
-          onClick={() => setShowForm(!setShowForm)}
-        >
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
+        <button type="submit">Create Item</button>
+        <button onClick={() => setShowForm(!setShowForm)}>Home Page</button>
       </form>
     </div>
   );
 }
+
