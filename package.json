@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "jest",
-    "client-dev": "parcel public/index.html --open",
+    "client-dev": "parcel public/index.html",
     "server-dev": "nodemon server.js",
     "seed": "node seed.js",
     "start": "react-scripts start",
