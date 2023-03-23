@@ -26,7 +26,9 @@
     "client-dev": "parcel public/index.html --open",
     "server-dev": "nodemon server.js",
     "seed": "node server/seed.js",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "newstart": "npm run seed && npm run server-dev && npm run start"
+
   },
   "eslintConfig": {
     "extends": [
