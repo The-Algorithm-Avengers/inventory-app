@@ -26,6 +26,21 @@
     text-align:  center;
   }
 
+  .search-add-item-container {
+    margin: 15px 10px 0px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .searchInput {
+    padding: 10px 20px;
+    display: block;
+    font-weight: bold;
+    background-color: white;
+    margin-top: 15px;
+  }
 }
 
 .homepage-header{
@@ -72,13 +87,15 @@
 
 .itemTitle{
   text-align: center;
+  font-weight: 700;
+  font-size: .85em;
+  text-transform: uppercase;
+  padding: 0 20px;
 }
 
 .flex {
   margin: 4em;
 }
-
-
 
 .create-form {
   font-family: 'Bebas Neue';
@@ -110,4 +127,22 @@ input {
   justify-content: center;
   height: auto;
   min-height: 5%;
+}
+
+.search-add-item-container {
+  margin: 15px 10px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 10px 20px;
+  display: block;
+  font-weight: bold;
+  background-color: white;
+}
+
+.container-item-card {
+  cursor: pointer;
 }
